@@ -26,3 +26,11 @@ heroku git:remote -a insert-your-app-name-here
 git add .
 git commit -am "Deploy app to Heroku"
 git push heroku master
+
+# error: src refspec master does not match any
+git push heroku HEAD:master
+
+# for logs
+heroku logs --tail
+
+
