@@ -1,13 +1,18 @@
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const app = express();
 app.use(express.json());
 // app.use(express.urlencoded());
 const PORT = 3000;
 app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({extended: true}));
+app.use(cookieParser());
 
+const spotifyRouter = require(__dirname + '/server/routers/spotifyrouter');
 
-
+app.use('/spotify', spotifyRouter);
 
 app.get('/ping', (req, res) => {
   res.json({message: 'pong'});
