@@ -1,7 +1,8 @@
 import React from 'react';
 import '../App.scss';
 import Reactplayer from './Reactplayer'
-
+import { ChakraProvider, Box, Button } from "@chakra-ui/react"
+// import logo from './spotify.svg';
 function App() {
   // const [data, setData] = React.useState(null);
 
@@ -23,9 +24,11 @@ function App() {
   // }, []);
 
   return (
+    <ChakraProvider>
     <div className="wrapper">
     <div className="grid">
-    <div className="header">header</div>
+    <div className="header">header
+    </div>
     <div className="playlist">playlist</div>
     <Reactplayer />
     <div className="searchbar">searchbar</div>
@@ -33,6 +36,7 @@ function App() {
     <div className="footer">footer</div>
     </div>
     </div>
+    </ChakraProvider>
   );
 }
 

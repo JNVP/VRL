@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: black;
 }
 
 .wrapper {
@@ -23,40 +24,47 @@
 }
 
 .header {
-  border: 1px solid black;
+  border: 1px solid white;
+  color : white;
   // grid-column: 1/13;
   // grid-row: 1/2;
   grid-area: 1/1/2/13;
 }
 
 .playlist {
-  border: 1px solid black;
+  border: 1px solid white;
   grid-area: 2/1/12/5;
+  color : white;
 }
 
 .react-player{
-  border: 1px solid black;
+  border: 1px solid white;
   grid-area: 2/5/7/13;
+  color : white;
 }
 
 .searchbar {
-  border: 1px solid black;
+  border: 1px solid white;
   grid-area: 7/5/8/13;
+  color : white;
 }
 
 .alternative-videos{
-  border: 1px solid black;
+  border: 1px solid white;
   grid-area: 8/5/12/13;
+  color : white;
 }
 
 .footer {
-  border: 1px solid black;
+  border: 1px solid white;
   grid-area: 12/1/13/13;
+  color : white;
 }
 
 .login-container{
-  border: 1px solid black;
+  border: 1px solid white;
   grid-area: 4/5/9/9;
+  color : white;
 }
 
 // tablets
