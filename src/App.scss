@@ -13,6 +13,8 @@
 
 .grid{
   display: grid;
+  // grid-template-columns:repeat(12, 1fr);
+  // grid-template-rows:repeat(12, 1fr);
   grid: repeat(12, 1fr)/ repeat(12, 1fr);
   height: 100vh;
   width: 100vw;
@@ -22,6 +24,8 @@
 
 .header {
   border: 1px solid black;
+  // grid-column: 1/13;
+  // grid-row: 1/2;
   grid-area: 1/1/2/13;
 }
 

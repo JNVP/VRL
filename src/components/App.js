@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.scss';
+import Reactplayer from './Reactplayer'
 
 function App() {
   // const [data, setData] = React.useState(null);
@@ -26,7 +27,7 @@ function App() {
     <div className="grid">
     <div className="header">header</div>
     <div className="playlist">playlist</div>
-    <div className="react-player">react-player</div>
+    <Reactplayer />
     <div className="searchbar">searchbar</div>
     <div className="alternative-videos">alternative-videos</div>
     <div className="footer">footer</div>
