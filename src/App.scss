@@ -3,3 +3,77 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  // background: red;
+  
+}
+
+.grid{
+  display: grid;
+  grid: repeat(12, 1fr)/ repeat(12, 1fr);
+  height: 100vh;
+  width: 100vw;
+  // background: red;
+
+}
+
+.header {
+  border: 1px solid black;
+  grid-area: 1/1/2/13;
+}
+
+.playlist {
+  border: 1px solid black;
+  grid-area: 2/1/12/5;
+}
+
+.react-player{
+  border: 1px solid black;
+  grid-area: 2/5/7/13;
+}
+
+.searchbar {
+  border: 1px solid black;
+  grid-area: 7/5/8/13;
+}
+
+.alternative-videos{
+  border: 1px solid black;
+  grid-area: 8/5/12/13;
+}
+
+.footer {
+  border: 1px solid black;
+  grid-area: 12/1/13/13;
+}
+
+.login-container{
+  border: 1px solid black;
+  grid-area: 4/5/9/9;
+}
+
+// tablets
+@media (min-width: 480px){
+  .grid{
+    max-width: 900px;
+  }
+}
+
+// small laptops
+// @media (min-width: 780px) {
+
+// }
+
+
+// desktops
+// @media (min-width: 1025px) {
+
+// }
+
+// extra large screen
+// @media (min-width: 1200px) {
+
+// }

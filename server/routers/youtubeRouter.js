@@ -1,7 +1,10 @@
-import express from 'express';
+const express = require('express');
+const router = express.Router();
+import youtubeController from '../controllers/youtubecontroller';
 
-import youtubeController from '../controllers/youtubeController';
-
-const youtubeRouter = express.Router();
+// gets the youtubeURL for react player
+router.get('/', youtubeController.getYoutubeUrl, (req, res) => {
+  res.status(200).json(res.locals.url);
+});
 
 export default youtubeRouter;
