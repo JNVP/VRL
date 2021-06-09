@@ -14,7 +14,7 @@ export default function Reactplayer() {
         width={'100%'}
         height={'90%'}
         playing={true}
-        muted={true}
+       // muted={false}
         controls={true}
       />
     </div>
