@@ -1,7 +1,8 @@
-import React, {useContext, useEffect, useState} from 'react';
-import '../App.scss';
-import { Box, Button, Spacer, GridItem } from "@chakra-ui/reactimport {SongContext} from './SongContext';
-
+import React, {useContext, useEffect, useState} from 'react'
+import '../App.scss'
+import { Box, Button, Spacer, GridItem } from "@chakra-ui/react"
+import {SongContext} from './SongContext'
+ 
 function Playlists (){
     const [playlists, setPlaylist] = useState([]);
     const [songs, setSongs] = useContext(SongContext);
@@ -29,7 +30,7 @@ function Playlists (){
     })
    
      return (
-         <GridItem colSpan={1} rowSpan={11} bg="yellow">
+         <GridItem colSpan={1} rowSpan={11}>
              {playlists.map(playlist => {
                 
                 return (<div><Button onClick = {(e) => {
@@ -42,13 +43,11 @@ function Playlists (){
                                  console.log(data)
                                  setSongs(data);
                                         })
-                }} colorScheme='green' size = "xs" variant="outline"> {playlist.name} </Button>
+                }} colorScheme='green' size = "xs" variant="outline" > {playlist.name} </Button>
                 <Spacer /> </div>)
              })}
          </GridItem>
      )
-
-  
 }
 
 export default Playlists;

@@ -4,13 +4,15 @@ import Playlists from './Playlists'
 import { ChakraProvider, Box, Button, GridItem } from "@chakra-ui/react"
 
 
-function Menu () {
-    return (
-        <Grid>
-            <Playlists></Playlists>
-        </GridItem>
-    )
-}
+//Setting up for scale, not necessary for MVP
+
+// function Menu () {
+//     return (
+//         <GridItem>
+//             <Playlists/>
+//         </GridItem>
+//     )
+// }
 
 
 export default Menu;

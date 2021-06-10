@@ -4,9 +4,9 @@ import Reactplayer from './Reactplayer'
 import Song from './Song';
 import { SongContext, SongsProvider } from './SongContext'
 import { VideoContext, VideoProvider } from './VideoContext';
-import { ChakraProvider, Box, Button, GridItem, Grid } from "@chakra-ui/react"
+import { ChakraProvider, Box, Button, GridItem, Grid } from "@chakra-ui/react";
 import Playlists from './Playlists';
-import Header from './Header'
+import Header from './Header';
 // import logo from './spotify.svg';
 function App() {
   // const [data, setData] = React.useState(null);
@@ -33,24 +33,19 @@ function App() {
     <SongsProvider>
     <div className="wrapper">
     <Grid className="grid">
-    <GridItem colSpan={12}>
+    <GridItem colSpan={12} bg="#1aa6834">
     <Header />
     </GridItem>
  
-    <GridItem bg="yellow" className="playlist" overflow="scroll"> playlist
+    <GridItem className="playlist" overflow="scroll" overflow-y="hidden"> playlist
     <Playlists/>
     </GridItem>
-    
-
     <VideoProvider>
     <Reactplayer />
-    <div className="searchbar">searchbar</div>
-    <div className="alternative-videos">alternative-videos
+    <GridItem className="songs" overflow="scroll">Songs
     <Song />
-    </div>
+    </GridItem>
     </VideoProvider>
-    
-    <div className="footer">footer</div>
     </Grid>
     </div>
     </SongsProvider>
