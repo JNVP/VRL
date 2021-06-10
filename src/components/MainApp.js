@@ -30,34 +30,25 @@ function App() {
 
   return (
     <ChakraProvider>
-      <SongsProvider>
-        <div className="wrapper">
-          <Grid className="grid">
-            <GridItem colSpan={12}>
-              <Header />
-            </GridItem>
-
-            <GridItem className="playlist" overflow="scroll">
-              {' '}
-              playlist
-              <Playlists />
-            </GridItem>
-
-            <VideoProvider>
-              <Reactplayer />
-              <div className="searchbar">searchbar</div>
-              <div className="alternative-videos">
-                alternative-videos
-                <Song />
-              </div>
-            </VideoProvider>
-
-            <div className="footer">
-              <a href="/spotify/login">Signout</a>
-            </div>
-          </Grid>
-        </div>
-      </SongsProvider>
+    <SongsProvider>
+    <div className="wrapper">
+    <Grid className="grid">
+    <GridItem colSpan={12} bg="#1aa6834">
+    <Header />
+    </GridItem>
+ 
+    <GridItem className="playlist" overflow="scroll" overflow-y="hidden" align="center"> playlist
+    <Playlists/>
+    </GridItem>
+    <VideoProvider>
+    <Reactplayer />
+    <GridItem className="songs" overflow="scroll">Songs
+    <Song />
+    </GridItem>
+    </VideoProvider>
+    </Grid>
+    </div>
+    </SongsProvider>
     </ChakraProvider>
   );
 }

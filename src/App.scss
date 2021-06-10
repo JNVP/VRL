@@ -24,7 +24,7 @@
 }
 
 .header {
-  border: 1px solid white;
+  border: 1px solid rgb(67, 55, 55);
   color : white;
   // grid-column: 1/13;
   // grid-row: 1/2;
@@ -32,31 +32,31 @@
 }
 
 .playlist {
-  border: 1px solid white;
+  border: 1px solid rgb(67, 55, 55);
   grid-area: 2/1/12/5;
   color : white;
 }
 
 .react-player{
-  border: 1px solid white;
+  border: 1px solid rgb(67, 55, 55);
   grid-area: 2/5/7/13;
   color : white;
 }
 
 .searchbar {
-  border: 1px solid white;
+  border: 1px solid rgb(67, 55, 55);
   grid-area: 7/5/8/13;
   color : white;
 }
 
-.alternative-videos{
-  border: 1px solid white;
-  grid-area: 8/5/12/13;
+.songs{
+  border: 1px solid rgb(67, 55, 55);
+  grid-area: 7/5/12/13;
   color : white;
 }
 
 .footer {
-  border: 1px solid white;
+  border: 1px solid rgb(67, 55, 55);
   grid-area: 12/1/13/13;
   color : white;
 }

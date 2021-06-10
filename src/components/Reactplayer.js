@@ -10,11 +10,11 @@ export default function Reactplayer() {
   // ]
 
   return (
-    <div className="react-player">react-player
+    <div className="react-player">
       <ReactPlayer
         url={video}
         width={'100%'}
-        height={'90%'}
+        height={'100%'}
         playing={true}
        // muted={false}
         controls={true}

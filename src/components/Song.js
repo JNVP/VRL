@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import '../App.scss';
-import { ChakraProvider, Box, Button, Spacer } from "@chakra-ui/react"
+import { Flex, Button, Spacer, Text } from "@chakra-ui/react"
 import {SongContext} from './SongContext';
 import {VideoContext} from './VideoContext';
 
@@ -11,7 +11,7 @@ const Song = () => {
   return (
       <div>
         {songs.map(song => {
-             return (<div><Button onClick = {(e) => {
+             return (<Flex align="center"><Button onClick = {(e) => {
                e.preventDefault();
                const search = song.songName + " " + song.artistArr.join(" ");
                fetch(`/youtube/${song.songName}/${song.artistArr.join(" ")}`)
@@ -23,8 +23,10 @@ const Song = () => {
                  setVideo([data.url])
                })
                .catch(error => console.log(error));
-             }} colorScheme='green' size = "xs" variant="outline"> {song.songName} </Button>
-                <Spacer /> </div>)
+             }} colorScheme='green' size = "xs" variant="outline"> {song.songName} </Button> 
+             <Text fontSize="sm" color="gray.500"> -{song.artistArr[0]}</Text>
+                <Spacer /> 
+                </Flex>)
         })}
       </div>
    
