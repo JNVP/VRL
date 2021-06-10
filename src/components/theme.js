@@ -12,7 +12,7 @@ const theme = extendTheme({
   },
   colors: {
     transparent: "transparent",
-    black: "#000",
+    black: "#212121",
     white: "#fff",
     gray: {
       50: "#f7fafc",

@@ -39,7 +39,7 @@ function App() {
           <GridItem colSpan={12} bg="#1aa6834">
             <Header />
           </GridItem>
-          <GridItem className="playlist" overflow="scroll" overflow-y="hidden" align="center"> 
+          <GridItem className="playlist" overflow="scroll" overflow-y="hidden"> 
             Playlists
             <Playlists/>
           </GridItem>
