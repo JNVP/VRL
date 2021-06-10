@@ -8,7 +8,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-
 app.get('/ping', (req, res) => {
   res.json({message: 'pong'});
 });
@@ -28,3 +27,5 @@ app.get('/', function (req, res) {
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });
+
+
