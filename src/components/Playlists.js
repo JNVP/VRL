@@ -1,8 +1,8 @@
-import React, {useContext, useEffect, useState} from 'react'
-import '../App.scss'
-import { Box, Button, Spacer, GridItem } from "@chakra-ui/react"
-import {SongContext} from './SongContext'
- 
+import React, {useContext, useEffect, useState} from 'react';
+import '../App.scss';
+import { Box, Button, Spacer, GridItem } from "@chakra-ui/react";
+import { SongContext } from './SongContext';
+
 function Playlists (){
     const [playlists, setPlaylist] = useState([]);
     const [songs, setSongs] = useContext(SongContext);
