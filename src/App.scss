@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   background: black;
+  color: white;
 }
+
+$border-color: rgba(194, 194, 194, 0.863);
 
 .wrapper {
   display: grid;
@@ -24,39 +27,81 @@
 }
 
 .header {
-  border: 1px solid white;
+  border: 1px solid $border-color;
   color : white;
   // grid-column: 1/13;
   // grid-row: 1/2;
   grid-area: 1/1/2/13;
+
+  h1 {
+    color: rgba(0, 255, 0, 0.247);
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+  }
+
 }
 
-.playlist {
-  border: 1px solid white;
+.songs {
+  border: 1px solid $border-color;
   grid-area: 2/1/12/5;
   color : white;
+  overflow: scroll;
+
+  h2{
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+
+  }
+
+  .song {
+  border: 1px solid $border-color;
+  height: 5em;
+  display:grid;
+  place-items: center;
+
+}
+
 }
 
 .react-player{
-  border: 1px solid white;
+  border: 1px solid $border-color;
   grid-area: 2/5/7/13;
   color : white;
 }
 
 .searchbar {
-  border: 1px solid white;
+  border: 1px solid $border-color;
   grid-area: 7/5/8/13;
   color : white;
 }
 
-.alternative-videos{
-  border: 1px solid white;
+.playlists{
+  border: 1px solid $border-color;
   grid-area: 8/5/12/13;
   color : white;
+  overflow: scroll;
+
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .playlist{
+    border: 1px solid $border-color;
+    height: 5em;
+    display: grid;
+    place-items: center;
+
+  }
 }
 
 .footer {
-  border: 1px solid white;
+  border: 1px solid $border-color;
   grid-area: 12/1/13/13;
   color : white;
 }
@@ -105,6 +150,8 @@ $login-button-hover-background: rgb(110, 110, 110);
 
 
 }
+
+
 
 // tablets
 @media (min-width: 480px){

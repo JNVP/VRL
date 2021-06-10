@@ -1,7 +1,10 @@
 import React from 'react';
 import '../App.scss';
-import Reactplayer from './Reactplayer'
-import { ChakraProvider, Box, Button } from "@chakra-ui/react"
+import Reactplayer from './Reactplayer';
+import Songs from './Songs'
+import { ChakraProvider, Box, Button } from '@chakra-ui/react';
+import Playlists from './Playlists'
+
 // import logo from './spotify.svg';
 function App() {
   // const [data, setData] = React.useState(null);
@@ -25,17 +28,18 @@ function App() {
 
   return (
     <ChakraProvider>
-    <div className="wrapper">
-    <div className="grid">
-    <div className="header">header
-    </div>
-    <div className="playlist">playlist</div>
-    <Reactplayer />
-    <div className="searchbar">searchbar</div>
-    <div className="alternative-videos">alternative-videos</div>
-    <div className="footer">footer</div>
-    </div>
-    </div>
+      <div className="wrapper">
+        <div className="grid">
+          <div className="header">
+            <h1>Video Request Live</h1>
+          </div>
+          <Songs />
+          <Reactplayer />
+          <div className="searchbar"></div>
+          <Playlists />
+          <div className="footer"></div>
+        </div>
+      </div>
     </ChakraProvider>
   );
 }
