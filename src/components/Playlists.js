@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import '../App.scss';
-import { ChakraProvider, Box, Button, Spacer, GridItem } from "@chakra-ui/react"
-import {SongContext} from './SongContext';
+import { Box, Button, Spacer, GridItem } from "@chakra-ui/reactimport {SongContext} from './SongContext';
 
 function Playlists (){
     const [playlists, setPlaylist] = useState([]);
@@ -27,12 +26,9 @@ function Playlists (){
             console.log(data)
         })
      }
-          
     })
    
      return (
-
-      
          <GridItem colSpan={1} rowSpan={11} bg="yellow">
              {playlists.map(playlist => {
                 
