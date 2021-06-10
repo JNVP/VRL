@@ -1,16 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react';
 import ReactPlayer from 'react-player'
+import {VideoContext} from './VideoContext';
 
 export default function Reactplayer() {
   
-  const url = [
-    "https://www.youtube.com/watch?v=K38xNqZvBJI", "https://www.youtube.com/watch?v=UNbOr0ylYZk"
-  ]
+  const [video, setVideo] = useContext(VideoContext);
+  // const url = [
+  //   "https://www.youtube.com/watch?v=K38xNqZvBJI", "https://www.youtube.com/watch?v=UNbOr0ylYZk"
+  // ]
 
   return (
     <div className="react-player">react-player
       <ReactPlayer
-        url={url}
+        url={video}
         width={'100%'}
         height={'90%'}
         playing={true}
