@@ -37,7 +37,7 @@ function App() {
     <Header />
     </GridItem>
  
-    <GridItem className="playlist" overflow="scroll" overflow-y="hidden"> playlist
+    <GridItem className="playlist" overflow="scroll" overflow-y="hidden" align="center"> playlist
     <Playlists/>
     </GridItem>
     <VideoProvider>
