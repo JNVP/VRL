@@ -54,20 +54,19 @@ const searchParams = {
 };
 
 // returns a promise
-google
-  .youtube('v3')
-  .search.list(searchParams)
-  .then((response) => {
-    const {data} = response;
-    data.items.forEach((item) => {
-      console.log(
-        `Title: ${item.snippet.title}\nURL: <a href="https://www.youtube.com/watch?v=${item.id.videoId}">`
-      );
-    });
-  })
-  .catch((err) => console.log(err));
+// google
+//   .youtube('v3')
+//   .search.list(searchParams)
+//   .then((response) => {
+//     const {data} = response;
+//     data.items.forEach((item) => {
+//       console.log(
+//         `Title: ${item.snippet.title}\nURL: <a href="https://www.youtube.com/watch?v=${item.id.videoId}">`
+//       );
+//     });
+//   })
+//   .catch((err) => console.log(err.stack));
 
-module.exports = youtubeController;
 // // try to find the url for the react player to load
 
 // // Make sure the client is loaded before calling this method.
@@ -122,3 +121,6 @@ module.exports = youtubeController;
 //     },
 //     function(err) { console.error("Execute error", err); });
 // }
+
+
+module.exports = youtubeController;
