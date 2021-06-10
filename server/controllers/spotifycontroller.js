@@ -41,7 +41,7 @@ module.exports = {
 
       if(!state || !cookieState || state !== cookieState) throw 'Invalid state token';
 
-      //console.log(req.query.code);
+      
 
       const fetchBody = new URLSearchParams({
         grant_type: 'authorization_code',
@@ -51,7 +51,7 @@ module.exports = {
 
       const spotifyAuth = btoa(process.env.SPOTIFY_CLIENT + ':' + process.env.SPOTIFY_SECRET);
 
-      //console.log(spotifyAuth);
+      
 
       const response = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
@@ -66,7 +66,7 @@ module.exports = {
       
       const parsedResponse = await response.json();
 
-      //console.log(parsedResponse);
+      
 
       res.locals.spotifyTokens = {
         accessToken : parsedResponse.access_token || null,
@@ -127,13 +127,13 @@ module.exports = {
 
       const {accessToken,refreshToken} = req.cookies;
 
-      console.log(accessToken);
+      
 
       const queryParams = new URLSearchParams({
         limit: 50
       })
       //const test_token = "BQA5QHd5q4pwqA5Eikvn7kL7kGDZBTHevZIDHt7hLvelqD3Wo6kYsPuM9qd4gS8kHgOOb_Oz5Bnow7A6S6Cbq5l6sRaYrOdIn_Bc72j8fbdn9d2fFkMAzQIE1S87BiPGIZZhd55WCsZB8iMN7N-9yDPRg47DWBEzxxoepEJRGTly_6Vk_ARZ_HoKvis7wLZo"
-      const response = await fetch('https://api.spotify.com/v1/me/playlists', {
+      const response = await fetch('https://api.spotify.com/v1/me/playlists?limit=50', {
         headers: {
           'Authorization': 'Bearer ' + accessToken
         }
@@ -145,7 +145,7 @@ module.exports = {
       if(response.status !== 200) throw parsedResponse;
 
       const {items} = parsedResponse;
-      // console.log(items)
+
       const playlistArr = [];
 
       for(let i = 0; i < items.length; i += 1) {
@@ -161,6 +161,46 @@ module.exports = {
     }
 
     catch (e) {
+      console.error(e);
+      return;
+    }
+  },
+
+  async sendPlaylistSongs(req,res,next) {
+
+    try {
+
+      const {accessToken,refreshToken} = req.cookies;
+      const {playlistID} = req.params;
+  
+      const response = await fetch('https://api.spotify.com/v1/playlists/' + playlistID + '?fields=tracks.items(track(name,artists(name)))', {
+        headers: {
+          'Authorization' : 'Bearer ' + accessToken
+        }
+      });
+
+      const parsedResponse = await response.json();
+
+      if(response.status !== 200) throw parsedResponse;
+
+      const tracks = parsedResponse.tracks.items;
+
+      const songArr = [];
+
+      for(let i = 0; i < tracks.length; i += 1){
+
+        const songName = tracks[i].track.name;
+        const artistArr = tracks[i].track.artists.map((el) => el.name);
+
+        songArr.push({songName,artistArr});
+      }
+      
+      res.locals.playlistSongs = songArr;
+
+      return next();
+    }
+
+    catch(e) {
       console.error(e);
       return;
     }
