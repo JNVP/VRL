@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import '../App.scss';
-import { ChakraProvider, Box, Button, Spacer } from "@chakra-ui/react"
+import { ChakraProvider, Box, Button, Spacer, GridItem } from "@chakra-ui/react"
 import {SongContext} from './SongContext';
 
 function Playlists (){
@@ -31,7 +31,9 @@ function Playlists (){
     })
    
      return (
-         <div>
+
+      
+         <GridItem colSpan={1} rowSpan={11} bg="yellow">
              {playlists.map(playlist => {
                 
                 return (<div><Button onClick = {(e) => {
@@ -47,7 +49,7 @@ function Playlists (){
                 }} colorScheme='green' size = "xs" variant="outline"> {playlist.name} </Button>
                 <Spacer /> </div>)
              })}
-         </div>
+         </GridItem>
      )
 
   
