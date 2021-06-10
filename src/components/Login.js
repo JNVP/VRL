@@ -8,7 +8,7 @@ export default function Login() {
           <h1>VRL</h1>
         </div>
         <div className="login-button">
-          <a href="/auth/spotify">Login with Spotify</a>
+          <a href="/spotify/login">Login with Spotify</a>
         </div>
       </div>
     </div>
