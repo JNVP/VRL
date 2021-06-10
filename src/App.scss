@@ -65,6 +65,45 @@
   border: 1px solid white;
   grid-area: 4/5/9/9;
   color : white;
+  display: grid;
+  grid: repeat(12, 1fr)/ repeat(12, 1fr);
+  place-items: center;
+
+  h1{
+    color: rgba(2, 182, 2, 0.836);
+    grid-area: 3/4/6/10;
+    font-size: 3em;
+  }
+}
+
+
+$login-button-background: rgb(83, 83, 83);
+$login-button-hover-background: rgb(110, 110, 110);
+
+.login-button{
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  background: $login-button-background;
+  grid-area: 7/6/8/8;
+  display: grid; 
+  place-items: center;
+
+  &:hover {
+    background-color: $login-button-hover-background;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    background: none;
+
+    &:hover{
+      color: rgba(238, 238, 238, 0.856);
+    }
+  }
+
+
 }
 
 // tablets

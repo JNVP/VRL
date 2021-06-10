@@ -11,7 +11,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
 const spotifyRouter = require(__dirname + '/server/routers/spotifyrouter');
+const youtubeRouter = require('./server/routers/youtubeRouter');
 
+app.use('/youtube', youtubeRouter);
 app.use('/spotify', spotifyRouter);
 
 app.get('/ping', (req, res) => {
@@ -33,3 +35,5 @@ app.get('/', function (req, res) {
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });
+
+
