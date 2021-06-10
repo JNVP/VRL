@@ -3,7 +3,7 @@ import { Box, Button } from "@chakra-ui/react";
 
 
 
-//Setting up for scale, not necessary for MVP
+//Setting up for signout
 
 
 
