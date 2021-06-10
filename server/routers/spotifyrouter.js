@@ -8,7 +8,7 @@ const spotifyRouter = express.Router();
 spotifyRouter.get('/login', spotifyController.startAuth);
 
 spotifyRouter.get('/auth', spotifyController.confirmAuth, (req,res) => {
-  res.status(200).redirect('/');
+  res.status(200).redirect('/mainApp');
 });
 
 spotifyRouter.get('/playlists', spotifyController.sendPlaylists, (req, res) => {
