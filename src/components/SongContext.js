@@ -5,10 +5,11 @@ import React, {useState, createContext} from 'react';
 
 export const SongContext = createContext();
 
-export const SongsProvider = () => {
+export const SongsProvider = props => {
     const [songs, setSongs] = useState([])
     return (
-        <SongContext.Provider value = {[songs, setSongs]}>
+        <SongContext.Provider value= {[songs, setSongs]}>
+            {props.children}
         </SongContext.Provider>
     )
 }

@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import '../App.scss';
 import { ChakraProvider, Box, Button, Spacer } from "@chakra-ui/react"
-
+import {SongContext} from './SongContext';
 
 function Playlists (){
     const [playlists, setPlaylist] = useState([]);
+    const [songs, setSongs] = useContext(SongContext);
+
     console.log('in use effect')
     useEffect(() => {
         if(playlists.length===0){
@@ -32,13 +34,15 @@ function Playlists (){
          <div>
              {playlists.map(playlist => {
                 
-                return (<div><Button onClick = {() => {
+                return (<div><Button onClick = {(e) => {
+                            e.preventDefault()
                            fetch(`/spotify/songs/${playlist.id}`)
                             .then((response) => {
                                 console.log(response)
                                 return response.json()})
                             .then((data) => {
                                  console.log(data)
+                                 setSongs(data);
                                         })
                 }} colorScheme='green' size = "xs" variant="outline"> {playlist.name} </Button>
                 <Spacer /> </div>)

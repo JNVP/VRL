@@ -4,8 +4,10 @@ const youtubeController = {};
 
 // youtube query middleware
 youtubeController.getYoutubeUrl = (req, res, next) => {
+
   // req.body.query should be the input to search for
-  const query = req.body.query;
+  const {song, artist} = req.params;
+  const query = song + " " +  artist
 
   const searchParams = {
     // API KEY
@@ -26,18 +28,20 @@ youtubeController.getYoutubeUrl = (req, res, next) => {
       // iterates through the data.items
       data.items.forEach((item) => {
         // print results of search
-        console.log(
-          `Title: ${item.snippet.title}\nURL: <a href="https://www.youtube.com/watch?v=${item.id.videoId}">`
-        );
+        // console.log(
+        //   `Title: ${item.snippet.title}\nURL: <a href="https://www.youtube.com/watch?v=${item.id.videoId}">`
+        // );
         // put url in a const
-        const url = `<a href="https://www.youtube.com/watch?v=${item.id.videoId}">`;
+        const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
         // the url that will be used in server, store in local memory for server
-        res.locals.url = url;
+        res.locals.url = {url : url };
+        console.log(res.locals.url)
+        return next();
       });
     })
     .catch((err) => console.log(err.stack));
 
-  return next();
+  
 };
 
 // Running the file will hit up the API
